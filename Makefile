@@ -6,7 +6,7 @@
 #    By: fathjami <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/18 14:59:43 by fathjami          #+#    #+#              #
-#    Updated: 2021/12/18 16:22:26 by fathjami         ###   ########.fr        #
+#    Updated: 2021/12/26 10:03:49 by fathjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ RM = rm -rf
 FLAGS = -Wall -Wextra -Werror
 
 NAME = long
-FILES = so_long
+FILES = so_long utils
 SRC = $(FILES:=.c)
 OBJ = $(FILES:=.o)
 
-LINKES =  -I libft -I /usr/local/include -L /usr/local/lib \
-    -l mlx -framework OpenGL -framework Appkit
+LINKES =  -I so_long.h -I /usr/local/include -L /usr/local/lib \
+		   -l mlx -framework OpenGL -framework Appkit
 
 bold := $(shell tput bold)
 #BACKGROUND COLORS
