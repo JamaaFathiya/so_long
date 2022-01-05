@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fathjami <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/18 14:59:43 by fathjami          #+#    #+#              #
-#    Updated: 2021/12/26 10:03:49 by fathjami         ###   ########.fr        #
+#    Updated: 2022/01/05 18:05:04 by fathjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RM = rm -rf
 FLAGS = -Wall -Wextra -Werror
 
 NAME = long
-FILES = so_long utils
+FILES = so_long parsing/parsing0 parsing/parsing1 parsing/parsing2 clean fill
 SRC = $(FILES:=.c)
 OBJ = $(FILES:=.o)
 

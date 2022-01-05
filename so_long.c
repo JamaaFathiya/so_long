@@ -3,56 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathjami <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/18 16:14:24 by fathjami          #+#    #+#             */
-/*   Updated: 2021/12/26 09:52:01 by fathjami         ###   ########.fr       */
+/*   Created: 2022/01/04 10:01:31 by fathjami          #+#    #+#             */
+/*   Updated: 2022/01/05 18:04:58 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-typedef struct s_data
-{
-	void	*mlx;
-	void	*mlx_win;
-}	t_data;
+#include "so_long.h"
 
 int destroy(int key, t_data *param)
 {
 	printf("Key: %d\n",key);
-	mlx_destroy_window(param->mlx, param->mlx_win);
+	if (key == ESC_KEY)
+	{
+		mlx_destroy_window(param->mlx, param->mlx_win);
+		printf("See you :)\n");
+		exit (0);
+	}
 	return (0);
 }
 
-int main()
+int close_win()
 {
-	void	*img;
+	printf("See you :)\n");
+	//free_all(all);
+	exit (1);
+	return (0);
+}
+
+
+int main(int ac, char **av)
+{
 	t_data param;
-	char	*relative_path = "/Users/fathjami/Downloads/tiny.XPM";
-	int		img_width;
-	int		img_height;
-	int a;
-	int b;
 
-	a = 10;
-	b= 10;
+	t_mp m;
 
-	img_width = 10;
-	img_height = 10;
 
-	param.mlx = mlx_init();
-	param.mlx_win = mlx_new_window(param.mlx, 1000, 900, "So Long");
-	mlx_key_hook (param.mlx_win, &destroy , &param);
-	img = mlx_xpm_file_to_image(param.mlx, relative_path, &img_width, &img_height);
-	mlx_put_image_to_window (param.mlx, param.mlx_win, img, 0 ,0);
-	mlx_loop(param.mlx);
+	if (ac == 2)
+	{
+		m = get_check_map(av[1]);
+		param.mlx = mlx_init();
+		param.mlx_win = mlx_new_window(param.mlx, m.c * SQUARE, m.l * SQUARE, "So Long");
+		fill_map(param, m);
+		mlx_key_hook (param.mlx_win, &destroy , &param);
+		mlx_hook(param.mlx_win, CLS_KEY, 0, &close_win, &param);
+		mlx_loop(param.mlx);
+	}
 }
