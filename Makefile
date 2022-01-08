@@ -6,7 +6,7 @@
 #    By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/18 14:59:43 by fathjami          #+#    #+#              #
-#    Updated: 2022/01/07 18:43:23 by fathjami         ###   ########.fr        #
+#    Updated: 2022/01/08 12:54:26 by fathjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RM = rm -rf
 FLAGS = -Wall -Wextra -Werror
 
 NAME = long
-FILES = so_long parsing/parsing0 parsing/parsing1 parsing/parsing2 clean fill movements move
+FILES = so_long parsing/parsing0 parsing/parsing1 parsing/parsing2 clean fill movements
 SRC = $(FILES:=.c)
 OBJ = $(FILES:=.o)
 
@@ -39,11 +39,11 @@ UNDER = \x1b[4m
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) so_long.h
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(LINKES)
 	@echo "$(BGREEN)$(BOLD)$(white) [:)] SUCCESS $(END)"
 
-%.o: %.c
+%.o: %.c so_long.h
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean: 

@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 09:52:27 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/08 09:58:35 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 12:51:24 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ void	move_up(t_data *param);
 void	move_left(t_data *param);
 void	move_down(t_data *param);
 void	move_right(t_data *param);
+void	image(char *relative_path, t_data param, int i, int j);
+void	free_all(t_data *param);
 int		len(char *str);
 int		ft_strcmp(char *s1, char *s2);
 int		count_coll(t_mp m);
 int		play(int key, t_data *param);
 int		map_len(int fd);
 int		destroy(int key, t_data *param);
-int		play(int key, t_data *param);
-void	image(char *relative_path, t_data param, int i, int j);
-void	free_all(t_data *param);
+int		move(int key, t_data *param);
 #endif

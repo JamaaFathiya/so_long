@@ -6,22 +6,11 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 10:01:31 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/08 10:19:56 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 12:49:55 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	destroy(int key, t_data *param)
-{
-	if (key == ESC_KEY)
-	{
-		free_all(param);
-		printf("See you :)\n");
-		exit (0);
-	}
-	return (0);
-}
 
 int	close_win(t_data *param)
 {
@@ -42,7 +31,7 @@ int	main(int ac, char **av)
 				param->m.c * SQUARE, param->m.l * SQUARE, "So Long");
 		fill_map(*param);
 		mlx_hook(param->mlx_win, CLS_KEY, 0, &close_win, param);
-		mlx_hook (param->mlx_win, 2, 0, &play, param);
+		mlx_hook (param->mlx_win, 2, 0, &move, param);
 		mlx_loop(param->mlx);
 	}
 }

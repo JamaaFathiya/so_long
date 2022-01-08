@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:24:52 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/08 10:31:46 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 12:53:43 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	free_all(t_data *param)
 
 	i = 0;
 	if (param->m.count == 0)
-		printf("Let's goo! You won duude. :)\n");
+		printf("Let's goo! Dude You Won. :)\n");
 	else
 		printf("See you :)\n");
 	while (param->m.map[i])

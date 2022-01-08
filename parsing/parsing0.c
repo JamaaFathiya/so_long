@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 09:40:18 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/07 14:36:13 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 13:02:38 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	check_all(t_mp *m)
 	return (m->exit && m->coll && m->start);
 }
 
-int	walls(t_mp m)
+int	check_walls(t_mp m)
 {
 	int	i;
 	int	j;
@@ -60,7 +60,7 @@ int	walls(t_mp m)
 	return (1);
 }
 
-int	ft_check_extension(char *str)
+int	check_extension(char *str)
 {
 	int		i;
 	char	*ex;
@@ -83,12 +83,12 @@ void	check_map(char *str, t_mp *m)
 {
 	int	cmp;
 
-	cmp = ft_check_extension(str);
+	cmp = check_extension(str);
 	m->count = count_coll(*m);
 	if (!check_all(m))
 		printf("Error!\nPlease make sure your map contains only '1','0' and at\
  least a 'P','C','E'.");
-	else if (!walls(*m))
+	else if (!check_walls(*m))
 		printf("Error!\nCheck your walls please.");
 	else if (!cmp)
 		printf("Error!\nMake sure that your filename format is *.ber.");
