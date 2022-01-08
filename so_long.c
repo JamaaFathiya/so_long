@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 10:01:31 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/07 18:32:37 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 10:19:56 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@ int	destroy(int key, t_data *param)
 {
 	if (key == ESC_KEY)
 	{
-		mlx_destroy_window(param->mlx, param->mlx_win);
+		free_all(param);
 		printf("See you :)\n");
 		exit (0);
 	}
 	return (0);
 }
 
-int	close_win(void)
+int	close_win(t_data *param)
 {
-	printf("See you :)\n");
-	exit (1);
+	free_all(param);
 	return (0);
 }
 

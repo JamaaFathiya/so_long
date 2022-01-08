@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:13:22 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/07 14:36:59 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 10:09:54 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,35 @@ void	is_dir(char *str)
 	if (fd != -1)
 	{
 		printf("Error!\n%s : is a directory\n", str);
-		exit (1);
+		close(fd);
+		exit(1);
 	}
 	close (fd);
 }
 
-void player_position(t_mp *m, int i, int j)
+void	player_position(t_mp *m, int i, int j)
 {
 	if (m->map[i][j] == 'P')
 	{
 		m->p_y = i;
-		m->p_x = j;		
+		m->p_x = j;
 	}
 }
 
-int map_len(int fd)
+int	map_len(int fd)
 {
-	char *line;
-	int count;
+	char	*line;
+	int		count;
 
 	count = 0;
-	while ((line = get_next_line(fd)) != NULL)
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
-		count++;
 		free(line);
+		line = get_next_line(fd);
+		count++;
 	}
+	free(line);
 	return (count);
 }
 

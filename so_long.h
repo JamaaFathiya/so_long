@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 09:52:27 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/07 18:29:10 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 09:58:35 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,6 @@ int		play(int key, t_data *param);
 int		map_len(int fd);
 int		destroy(int key, t_data *param);
 int		play(int key, t_data *param);
+void	image(char *relative_path, t_data param, int i, int j);
+void	free_all(t_data *param);
 #endif
