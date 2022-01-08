@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 10:01:31 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/08 18:12:21 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 18:32:37 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	main(int ac, char **av)
 		param->mlx = mlx_init();
 		param->mlx_win = mlx_new_window(param->mlx,
 				param->m.c * SQUARE, param->m.l * SQUARE, "So Long");
-		fill_map(*param);
+		if (param->m.e == true)
+			mlx_loop_hook(param->mlx, &fill_map, param);
 		mlx_hook(param->mlx_win, CLS_KEY, 0, &close_win, param);
 		mlx_hook (param->mlx_win, 2, 0, &move, param);
 		mlx_loop(param->mlx);

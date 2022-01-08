@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 08:37:09 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/08 18:28:34 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 18:28:42 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,6 @@ int	move(int key, t_data *param)
 	else if (key == D_KEY)
 		move_right(param);
 	mlx_clear_window(param->mlx, param->mlx_win);
-	fill_map(*param);
+	fill_map(param);
 	return (0);
 }

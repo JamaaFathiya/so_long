@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 09:52:27 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/08 18:14:20 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/08 18:26:58 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ typedef struct mp
 	bool	coll;
 	bool	exit;
 	bool	start;
+	bool	e;
 	char	**map;
+	int		enemy;
 	int		c;
 	int		l;
 	int		count;
@@ -53,10 +55,10 @@ typedef struct s_data
 t_mp	get_check_map(char *str);
 char	*get_next_line(int fd);
 char	*duup(char *str);
+char	*enemy(t_data *param);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memset(void *b, int c);
 void	is_dir(char *str);
-void	fill_map(t_data param);
 void	player_position(t_mp *m, int i, int j);
 void	move_up(t_data *param);
 void	move_left(t_data *param);
@@ -65,6 +67,7 @@ void	move_right(t_data *param);
 void	image(char *relative_path, t_data param, int i, int j);
 void	free_all(t_data *param);
 int		len(char *str);
+int		fill_map(t_data *param);
 int		ft_strcmp(char *s1, char *s2);
 int		count_coll(t_mp m);
 int		play(int key, t_data *param);
