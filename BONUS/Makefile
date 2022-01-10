@@ -6,7 +6,7 @@
 #    By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/18 14:59:43 by fathjami          #+#    #+#              #
-#    Updated: 2022/01/08 13:17:30 by fathjami         ###   ########.fr        #
+#    Updated: 2022/01/10 12:02:39 by fathjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ RM = rm -rf
 FLAGS = -Wall -Wextra -Werror
 
 NAME = so_long
-FILES = so_long parsing/parsing0 parsing/parsing1 parsing/parsing2 clean fill movements
+FILES = so_long_bonus parsing_bonus/parsing0 parsing_bonus/parsing1 parsing_bonus/parsing2 clean_bonus fill_bonus movements_bonus itoa
 SRC = $(FILES:=.c)
 OBJ = $(FILES:=.o)
 
-LINKES =  -I so_long.h -I /usr/local/include -L /usr/local/lib \
+LINKES =  -I so_long_bonus.h -I /usr/local/include -L /usr/local/lib \
 		   -l mlx -framework OpenGL -framework Appkit
 
 bold := $(shell tput bold)
@@ -39,11 +39,11 @@ UNDER = \x1b[4m
 
 all: $(NAME)
 
-$(NAME): $(OBJ) so_long.h
+$(NAME): $(OBJ) so_long_bonus.h
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(LINKES)
 	@echo "$(BGREEN)$(BOLD)$(white) [:)] SUCCESS $(END)"
 
-%.o: %.c so_long.h
+%.o: %.c so_long_bonus.h
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean: 
