@@ -6,7 +6,7 @@
 #    By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/18 14:59:43 by fathjami          #+#    #+#              #
-#    Updated: 2022/01/10 12:02:39 by fathjami         ###   ########.fr        #
+#    Updated: 2022/01/10 18:08:48 by fathjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,9 @@ CC = gcc
 RM = rm -rf
 FLAGS = -Wall -Wextra -Werror
 
-NAME = so_long
-FILES = so_long_bonus parsing_bonus/parsing0 parsing_bonus/parsing1 parsing_bonus/parsing2 clean_bonus fill_bonus movements_bonus itoa
+NAME = so_long_bonus
+FILES = so_long_bonus parsing_bonus/parsing0_bonus parsing_bonus/parsing1_bonus parsing_bonus/parsing2_bonus\
+ 		clean_bonus fill_bonus movements_bonus itoa_bonus
 SRC = $(FILES:=.c)
 OBJ = $(FILES:=.o)
 

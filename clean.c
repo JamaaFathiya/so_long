@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:24:52 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/08 12:53:43 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/10 18:23:00 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void	free_all(t_data *param)
 		free(param->m.map[i++]);
 	free(param->m.map);
 	mlx_destroy_window(param->mlx, param->mlx_win);
+	free(param);
 	exit (0);
 }

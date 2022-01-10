@@ -6,7 +6,7 @@
 /*   By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 08:37:09 by fathjami          #+#    #+#             */
-/*   Updated: 2022/01/10 11:27:57 by fathjami         ###   ########.fr       */
+/*   Updated: 2022/01/10 18:05:07 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	move_up(t_data *param)
 			free_all(param);
 	}
 	else if (param->m.map[param->m.p_y - 1][param->m.p_x] == 'X')
-			free_all(param);
+		free_all(param);
 	else if (param->m.map[param->m.p_y - 1][param->m.p_x] == 'C')
 	{
 		param->m.count--;
@@ -58,7 +58,7 @@ void	move_down(t_data *param)
 			free_all(param);
 	}
 	else if (param->m.map[param->m.p_y + 1][param->m.p_x] == 'X')
-			free_all(param);
+		free_all(param);
 	else if (param->m.map[param->m.p_y + 1][param->m.p_x] == 'C')
 	{
 		param->m.count--;
@@ -86,7 +86,7 @@ void	move_left(t_data *param)
 			free_all(param);
 	}
 	else if (param->m.map[param->m.p_y][param->m.p_x - 1] == 'X')
-			free_all(param);
+		free_all(param);
 	else if (param->m.map[param->m.p_y][param->m.p_x - 1] == 'C')
 	{
 		param->m.count--;
@@ -114,7 +114,7 @@ void	move_right(t_data *param)
 			free_all(param);
 	}
 	else if (param->m.map[param->m.p_y][param->m.p_x + 1] == 'X')
-			free_all(param);
+		free_all(param);
 	else if (param->m.map[param->m.p_y][param->m.p_x + 1] == 'C')
 	{
 		param->m.count--;
@@ -136,7 +136,7 @@ int	move(int key, t_data *param)
 		move_left(param);
 	else if (key == D_KEY)
 		move_right(param);
-	if(key == W_KEY || key == S_KEY || key == A_KEY || key == D_KEY)
+	if (key == W_KEY || key == S_KEY || key == A_KEY || key == D_KEY)
 		param->moves++;
 	fill_map(param);
 	return (0);

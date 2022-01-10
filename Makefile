@@ -6,7 +6,7 @@
 #    By: fathjami <fathjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/18 14:59:43 by fathjami          #+#    #+#              #
-#    Updated: 2022/01/08 13:17:30 by fathjami         ###   ########.fr        #
+#    Updated: 2022/01/10 18:14:52 by fathjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,8 @@ END = \x1b[0m
 BOLD = \x1b[1m
 UNDER = \x1b[4m
 
+.PHONY: all clean fclean re bonus
+
 all: $(NAME)
 
 $(NAME): $(OBJ) so_long.h
@@ -49,13 +51,16 @@ $(NAME): $(OBJ) so_long.h
 clean: 
 	@$(RM) $(OBJ)
 	@echo "$(BYELLOW)$(BOLD)$(white) [:)] CLEAN $(END)"
+	@$(MAKE) clean -C BONUS
 	
 
 fclean: clean
 	@$(RM) $(NAME)
 	@echo "$(BYELLOW)$(BOLD)$(white) [:)] FCLEAN $(END)"
+	@$(MAKE) fclean -C BONUS
 
+bonus:
+	@$(MAKE) -C BONUS
 
 re: fclean all
 
-.PHONY: all clean fclean re
